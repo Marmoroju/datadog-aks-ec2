@@ -1,0 +1,42 @@
+datadog:
+  apiKeyExistingSecret: "datadog-secret"
+  clusterName: "aks-free-cluster"
+  site: "datadoghq.com"
+  logs:
+    enables: true
+    containerCollectAll: true
+  hostnameForceConfigAsCanonical: false
+  kubelet:
+    tslVerify: false
+  tags:
+    - "env:dev"
+
+agents:
+  useHostPID: true
+
+rbac:
+  create: true
+  serviceAccount:
+    create: true
+
+clusterAgent:
+  enabled: true
+  replicas: 1
+  service:
+    enabled: true
+  metricsProvider:
+    enabled: true
+  createPodDisruptionBudget: true
+
+instrumentation:
+  enabled: true
+  targets:
+    - name: "default-target"
+      ddTraceVersions:
+      java: "1"
+      python: "3"
+      js: "5"
+      php: "1"
+      dotnet: "3"
+      ruby: "2"
+

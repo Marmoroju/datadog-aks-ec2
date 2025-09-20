@@ -248,4 +248,4 @@ az group delete --name aks-free-rg-mmrj --yes --no-wait
 ```
 
  Sempre confira em cada uma das Clouds os recursos foram removidos.
-# datadog-aks-ec2
+
